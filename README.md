@@ -46,7 +46,8 @@ design, not luck.
 
 1. Review the PR. Check: photo under 500 KB, all four links resolve, no placeholder text left,
    project cards say what the student did.
-2. Merge.
-3. Uncomment that student's card in `index.html` on `main` and push. Cards are pre-written and
-   commented out, in roster order.
-4. GitHub Pages rebuilds automatically, in about a minute.
+2. Merge. **That is the whole job.**
+
+The front page builds its own list from whatever folders exist in `students/`, reading each
+student's name and one-line from their own page. There is nothing to uncomment and no second
+commit. GitHub Pages rebuilds in about a minute.
