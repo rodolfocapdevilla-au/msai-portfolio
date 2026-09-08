@@ -26,64 +26,88 @@
   </p>
 
   <h2>Summer &quot;D&quot; 2026 &middot; MAI 500</h2>
-  <div class="people">
-      <!-- <a class="person" href="students/denise-quimi-fonseca/">
-        <img src="students/denise-quimi-fonseca/photo.jpg" alt="">
-        <div class="name">Denise Fernanda Quimi Fonseca</div>
-        <div class="line">MS in Artificial Intelligence</div>
-      </a> -->
-      <!-- <a class="person" href="students/juan-pablo-arnedo/">
-        <img src="students/juan-pablo-arnedo/photo.jpg" alt="">
-        <div class="name">Juan Pablo Arnedo</div>
-        <div class="line">MS in Artificial Intelligence</div>
-      </a> -->
-      <!-- <a class="person" href="students/maria-paula-casas/">
-        <img src="students/maria-paula-casas/photo.jpg" alt="">
-        <div class="name">Maria Paula Casas Perich</div>
-        <div class="line">MS in Artificial Intelligence</div>
-      </a> -->
-      <!-- <a class="person" href="students/mariia-osokina/">
-        <img src="students/mariia-osokina/photo.jpg" alt="">
-        <div class="name">Mariia Osokina</div>
-        <div class="line">MS in Artificial Intelligence</div>
-      </a> -->
-      <!-- <a class="person" href="students/nour-boussaffa/">
-        <img src="students/nour-boussaffa/photo.jpg" alt="">
-        <div class="name">Nour El Ain Boussaffa</div>
-        <div class="line">MS in Artificial Intelligence</div>
-      </a> -->
-      <!-- <a class="person" href="students/rogerio-luis-fontanario/">
-        <img src="students/rogerio-luis-fontanario/photo.jpg" alt="">
-        <div class="name">Rogerio Luis Fontanario</div>
-        <div class="line">MS in Artificial Intelligence</div>
-      </a> -->
-      <!-- <a class="person" href="students/sofia-moreno-bendala/">
-        <img src="students/sofia-moreno-bendala/photo.jpg" alt="">
-        <div class="name">Sofía Moreno Bendala</div>
-        <div class="line">MS in Artificial Intelligence</div>
-      </a> -->
-      <!-- <a class="person" href="students/valentina-ramirez-chaparro/">
-        <img src="students/valentina-ramirez-chaparro/photo.jpg" alt="">
-        <div class="name">Valentina Ramirez Chaparro</div>
-        <div class="line">MS in Artificial Intelligence</div>
-      </a> -->
-      <!-- <a class="person" href="students/walid-abdelwahab/">
-        <img src="students/walid-abdelwahab/photo.jpg" alt="">
-        <div class="name">Walid Abdelwahab</div>
-        <div class="line">MS in Artificial Intelligence</div>
-      </a> -->
-      <!-- <a class="person" href="students/yaya-boubacar-sow/">
-        <img src="students/yaya-boubacar-sow/photo.jpg" alt="">
-        <div class="name">Yaya Boubacar Sow</div>
-        <div class="line">MS in Artificial Intelligence</div>
-      </a> -->
-  </div>
+  <div class="people" id="people"></div>
+  <p class="lede" id="empty" style="display:none">
+    Pages appear here as they are published. Nothing yet.
+  </p>
+  <noscript><p class="lede">Turn on JavaScript to see the list of student pages.</p></noscript>
 
   <footer>
     MS in Artificial Intelligence &middot; Atlantis University &middot;
     Faculty Lead: Rodolfo Capdevilla, Ph.D.
   </footer>
 </div>
+
+<script>
+/* The list builds itself from whatever is in students/ on the live site.
+   Merge a pull request and the card appears — there is nothing to edit here. */
+(function () {
+  var REPO = 'rodolfocapdevilla-au/msai-portfolio';
+  var grid = document.getElementById('people');
+  var empty = document.getElementById('empty');
+
+  // Used only if the GitHub API is unreachable or rate-limited.
+  var FALLBACK = [
+    'denise-quimi-fonseca','juan-pablo-arnedo','maria-paula-casas','mariia-osokina',
+    'nour-boussaffa','rogerio-luis-fontanario','sofia-moreno-bendala',
+    'valentina-ramirez-chaparro','walid-abdelwahab','yaya-boubacar-sow'
+  ];
+
+  function listFolders() {
+    return fetch('https://api.github.com/repos/' + REPO + '/contents/students')
+      .then(function (r) { if (!r.ok) throw new Error('api'); return r.json(); })
+      .then(function (j) {
+        return j.filter(function (e) { return e.type === 'dir'; })
+                .map(function (e) { return e.name; });
+      })
+      .catch(function () { return FALLBACK; });
+  }
+
+  function readPage(slug) {
+    return fetch('students/' + slug + '/index.html')
+      .then(function (r) { if (!r.ok) throw new Error('404'); return r.text(); })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        var h1 = doc.querySelector('h1');
+        var q = doc.querySelector('.quote');
+        var name = (h1 && h1.textContent || slug).trim();
+        var line = (q && q.textContent || '').trim().replace(/\s+/g, ' ');
+        if (line.length > 90) line = line.slice(0, 88).replace(/\s\S*$/, '') + '…';
+        return { slug: slug, name: name, line: line };
+      })
+      .catch(function () { return null; });
+  }
+
+  function render(people) {
+    people = people.filter(Boolean).sort(function (a, b) {
+      return a.name.localeCompare(b.name);
+    });
+    if (!people.length) { empty.style.display = ''; return; }
+    people.forEach(function (p) {
+      var a = document.createElement('a');
+      a.className = 'person';
+      a.href = 'students/' + p.slug + '/';
+      var img = document.createElement('img');
+      img.src = 'students/' + p.slug + '/photo.jpg';
+      img.alt = '';
+      img.loading = 'lazy';
+      var n = document.createElement('div');
+      n.className = 'name';
+      n.textContent = p.name;
+      var l = document.createElement('div');
+      l.className = 'line';
+      l.textContent = p.line || 'MS in Artificial Intelligence';
+      a.appendChild(img); a.appendChild(n); a.appendChild(l);
+      grid.appendChild(a);
+    });
+  }
+
+  listFolders()
+    .then(function (slugs) { return Promise.all(slugs.map(readPage)); })
+    .then(render)
+    .catch(function () { empty.style.display = ''; });
+})();
+</script>
 
 </body>
 </html>
