@@ -14,6 +14,20 @@
   var API = 'https://script.google.com/macros/s/AKfycbxWQeaWELkMK0OI9VlBLf5LRSB4L4-5WetXUXUn2ds8zewqHItIcppaJHfr-0dVE3oJ/exec';
   var LIVE = API.indexOf('script.google.com') !== -1;
 
+  /* Unlock code: from ?key= in the address, or remembered from last time.
+     Only the Received list ever needs it; leaving feedback never does. */
+  function keyStore(slug, v) {
+    try {
+      if (v === undefined) return localStorage.getItem('msai-key-' + slug) || '';
+      localStorage.setItem('msai-key-' + slug, v);
+    } catch (e) {}
+    return v || '';
+  }
+  function keyFromUrl() {
+    var m2 = location.search.match(/[?&]key=([^&]+)/);
+    return m2 ? decodeURIComponent(m2[1]).trim() : '';
+  }
+
   var path = location.pathname.replace(/\/+$/, '');
   var m = path.match(/\/students\/([^\/]+)$/);
   var SLUG = m ? m[1] : null;          // set on a student page
@@ -100,11 +114,17 @@
   function pretty(s) { return (s || '').replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); }); }
 
   /* ---------------- api ---------------- */
-  function load(slug) {
+  function load(slug, key) {
     if (!LIVE) return Promise.reject(new Error('not-configured'));
-    return fetch(API + '?target=' + encodeURIComponent(slug), { cache: 'no-store' })
+    var u = API + '?target=' + encodeURIComponent(slug);
+    if (key) u += '&key=' + encodeURIComponent(key);
+    return fetch(u, { cache: 'no-store' })
       .then(function (r) { return r.json(); })
-      .then(function (j) { if (!j || !j.ok) throw new Error('bad'); return j.items || []; });
+      .then(function (j) {
+        if (j && j.error === 'locked') throw new Error('locked');
+        if (!j || !j.ok) throw new Error('bad');
+        return j.items || [];
+      });
   }
   function send(payload) {
     if (!LIVE) return Promise.reject(new Error('not-configured'));
@@ -126,8 +146,10 @@
     var mine = ++seq;
     tRecv.setAttribute('aria-selected', 'true');
     tGive.setAttribute('aria-selected', 'false');
+    var key = keyFromUrl() || keyStore(slug);
     body.innerHTML = '<p class="fb-empty">Loading…</p>';
-    load(slug).then(function (items) {
+    load(slug, key).then(function (items) {
+      if (key) keyStore(slug, key);
       if (mine !== seq) return;
       if (!items.length) {
         body.innerHTML = '<p class="fb-empty">No feedback yet. It appears here as classmates leave it.</p>';
@@ -147,10 +169,33 @@
       });
     }).catch(function (e) {
       if (mine !== seq) return;
+      if (e.message === 'locked') { viewLocked(slug, !!key); return; }
       body.innerHTML = e.message === 'not-configured'
         ? '<p class="fb-empty">Feedback is not switched on yet. Your instructor turns it on in class.</p>'
         : '<p class="fb-empty">Could not load feedback just now. Try again in a moment.</p>';
     });
+  }
+
+  /* Shown when the list is private and we have no code, or a wrong one. */
+  function viewLocked(slug, wrong) {
+    body.innerHTML =
+        '<p class="fb-empty" style="margin-bottom:16px">This list is private &mdash; only the person '
+      + 'whose page this is can read it. Your code is in the link your instructor sent you.</p>'
+      + (wrong ? '<div class="fb-note err" style="margin-bottom:14px">That code did not match. Check it and try again.</div>' : '')
+      + '<div class="fb-field"><label for="fb-key">Your code</label>'
+      + '<input id="fb-key" type="text" autocomplete="off" spellcheck="false" placeholder="six characters">'
+      + '<p class="fb-hint">Entered once, remembered on this browser.</p></div>'
+      + '<button class="fb-send" id="fb-unlock">Unlock</button>';
+    var inp = body.querySelector('#fb-key');
+    inp.focus();
+    function go() {
+      var k = inp.value.trim();
+      if (!k) { inp.focus(); return; }
+      keyStore(slug, k);
+      viewReceived(slug);
+    }
+    body.querySelector('#fb-unlock').onclick = go;
+    inp.onkeydown = function (ev) { if (ev.key === 'Enter') go(); };
   }
 
   function viewGive(slug) {
@@ -229,9 +274,9 @@
     };
 
     if (LIVE) {
-      load(SLUG).then(function (items) {
+      load(SLUG, keyFromUrl() || keyStore(SLUG)).then(function (items) {
         if (items.length) btn.innerHTML = 'Feedback <span class="fb-count">' + items.length + '</span>';
-      }).catch(function () {});
+      }).catch(function () {});   // locked: no count, which is the point
     }
   }
 
