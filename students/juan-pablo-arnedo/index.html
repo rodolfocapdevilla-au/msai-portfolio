@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/style.css">
 <style>
-  /* Cards are now clickable links — hover lifts, click presses */
+  /* Cards: hover lifts, click presses */
   a.card{
     display:block;color:inherit;text-decoration:none;
     transition:transform 0.20s ease,box-shadow 0.20s ease;
@@ -24,6 +24,24 @@
     transform:scale(0.96);
     box-shadow:0 2px 8px rgba(16,24,40,.08);
     transition:transform 0.08s ease,box-shadow 0.08s ease;
+  }
+  /* Rail-link buttons: blue background, white text, sink on click */
+  .rail-link{
+    background:#1E6FE0;
+    border-color:#1E6FE0;
+    color:#FFFFFF;
+    transition:transform 0.12s ease,box-shadow 0.12s ease,background 0.12s ease;
+  }
+  .rail-link:hover{
+    background:#1857B4;
+    border-color:#1857B4;
+    color:#FFFFFF;
+    text-decoration:none;
+  }
+  .rail-link:active{
+    transform:scale(0.95) translateY(2px);
+    box-shadow:inset 0 2px 6px rgba(0,0,0,.20);
+    background:#1245A0;
   }
 </style>
 </head>
@@ -49,7 +67,7 @@
 
       <a class="rail-link" href="https://www.linkedin.com/in/juan-pablo-arnedo-5a18b4411/">LinkedIn profile</a>
       <a class="rail-link" href="https://github.com/Patagonico71">GitHub profile</a>
-      <a class="rail-link" href="https://drive.google.com/file/d/1J8r5DhMeXZkUWOvOSPXdyiI8us0ifb5w/view?usp=drive_link">Résumé</a>
+      <a class="rail-link" href="https://drive.google.com/uc?export=download&id=1J8r5DhMeXZkUWOvOSPXdyiI8us0ifb5w">Résumé</a>
     </aside>
 
     <!-- ================= MAIN COLUMN ================= -->

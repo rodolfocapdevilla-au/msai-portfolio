@@ -50,6 +50,8 @@ approved and merged each one directly, without written notes.
 | `cb7dc33` | 2026-09-08 | Fix duplicate icon2 image |
 | `a942eaf` | 2026-09-08 | Add hover animation to project icons |
 | `b2b7907` | 2026-09-10 | Add project detail pages and update cards with descriptions |
+| `3d53088` | 2026-09-10 | final update - arnedo (CLAUDE.md, CONTEXT.md, REPORT.md) |
+| `pending` | 2026-09-10 | Blue buttons, download résumé, final MD update |
 
 ## Pull Requests
 
@@ -58,4 +60,6 @@ approved and merged each one directly, without written notes.
 | [#3](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/3) | Add Juan Pablo Arnedo page | Merged |
 | [#4](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/4) | Add icons - Arnedo | Merged |
 | [#6](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/6) | Add hover animation - Arnedo | Merged |
-| [#16](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/16) | Round two — Juan Pablo Arnedo | Open |
+| [#16](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/16) | Round two — Juan Pablo Arnedo | Merged |
+| [#20](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/20) | final update - arnedo | Closed (replaced) |
+| PR pending | final update - arnedo (with button styles + download CV) | Open |
