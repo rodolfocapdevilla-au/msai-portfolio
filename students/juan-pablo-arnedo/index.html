@@ -3,8 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- ========== EDIT 1 of 5 — your name in the browser tab ========== -->
 <title>Juan Pablo Arnedo — MS in Artificial Intelligence</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,14 +10,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/style.css">
 <style>
-  .card img{transition:transform 0.3s ease}
-  .card img:hover{transform:scale(1.08) rotate(-2deg)}
+  /* Cards are now clickable links — hover lifts, click presses */
+  a.card{
+    display:block;color:inherit;text-decoration:none;
+    transition:transform 0.20s ease,box-shadow 0.20s ease;
+  }
+  a.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(16,24,40,.12);
+    text-decoration:none;
+  }
+  a.card:active{
+    transform:scale(0.96);
+    box-shadow:0 2px 8px rgba(16,24,40,.08);
+    transition:transform 0.08s ease,box-shadow 0.08s ease;
+  }
 </style>
 </head>
 <body>
 
 <nav class="nav">
-  <!-- EDIT 1 — your name here too -->
   <a class="badge" href="#top">Juan Pablo Arnedo</a>
   <a class="pill" href="#projects">Projects</a>
   <a class="pill" href="#education">Education</a>
@@ -33,12 +43,10 @@
 
     <!-- ================= LEFT RAIL ================= -->
     <aside>
-      <!-- ===== EDIT 2 of 5 — replace photo.jpg in this folder with your own ===== -->
       <div class="photo-card">
         <img src="photo.jpg" alt="Photograph of Juan Pablo Arnedo">
       </div>
 
-      <!-- ===== EDIT 3 of 5 — your four links. Every href must start with https:// ===== -->
       <a class="rail-link" href="https://www.linkedin.com/in/juan-pablo-arnedo-5a18b4411/">LinkedIn profile</a>
       <a class="rail-link" href="https://github.com/Patagonico71">GitHub profile</a>
       <a class="rail-link" href="https://drive.google.com/file/d/1J8r5DhMeXZkUWOvOSPXdyiI8us0ifb5w/view?usp=drive_link">Résumé</a>
@@ -46,45 +54,41 @@
 
     <!-- ================= MAIN COLUMN ================= -->
     <main>
-      <!-- EDIT 1 — and here -->
       <h1>Juan Pablo Arnedo</h1>
 
-      <!-- ===== EDIT 4 of 5 — one or two true sentences. Not a job title. ===== -->
       <p class="quote">
         I Hope The OPT stills exist when we finish the Master.
       </p>
 
-      <!-- ===== EDIT 5 of 5 — four project cards ===== -->
       <h2 id="projects">Current Projects</h2>
       <div class="cards">
 
-        <article class="card">
+        <a class="card" href="projectcard1.html">
           <img src="icon1.jpg" alt="Skill builder">
-          <h3>Skill builder</h3>
-          <p>We build four different skills.</p>
-        </article>
+          <h3>Skill Builder</h3>
+          <p>A Claude Code skill is a reusable file that tells the AI how to handle a specific task without re-explaining it each session. I built two skills: one that reconciles weekly supplier data into a procurement brief, and one that applies Anthropic's official brand colors to any document. Both are installed and working — a single slash command produces a finished output.</p>
+        </a>
 
-        <article class="card">
+        <a class="card" href="projectcard2.html">
           <img src="icon2.jpg" alt="Skills showcase landing page">
-          <h3>Skills showcase landing page</h3>
-          <p>A landing page showing the different skills.</p>
-        </article>
+          <h3>Skills Showcase Landing Page</h3>
+          <p>A landing page for an Atlantis University event on deploying AI agents in real production environments, covering orchestration, evaluation drift, and human handoff. I wrote three progressively detailed prompts for Lovable, an AI web builder, to construct the hero section, speaker profile, and a working registration form step by step. The result is a complete, mobile-responsive page built entirely through prompts, with no code written by hand.</p>
+        </a>
 
-        <article class="card">
+        <a class="card" href="projectcard3.html">
           <img src="icon3.jpg" alt="More Memory">
-          <h3>More Memory.</h3>
-          <p>A local page that saves it in Notion.</p>
-        </article>
+          <h3>More Memory</h3>
+          <p>A web page and Claude skill that captures notes and decisions from AI conversations and saves them into a structured Notion database so nothing is lost when the chat closes. I built the page, configured the Notion API connection, and wrote the skill so that saved items are tagged by type and organized automatically. The result is a memory layer that grows each session and can be recalled in any future conversation.</p>
+        </a>
 
-        <article class="card">
+        <a class="card" href="projectcard4.html">
           <img src="icon4.jpg" alt="Capstone: Local AI Model for Home Assistant">
-          <h3>Capstone: Local AI Model for Home Assistant</h3>
-          <p>Run a local AI model for Home Assistant.</p>
-        </article>
+          <h3>Capstone: Local AI for Home Assistant</h3>
+          <p>A home AI system that runs entirely on local hardware — voice commands, camera analysis, and device control, with all data staying on the home network and nothing sent to the cloud. The design connects a local language model, Frigate for camera analysis, Home Assistant for device control, and a local voice interface into one system you can give spoken orders to. The project is in active development; the architecture is defined and components are being integrated.</p>
+        </a>
 
       </div>
 
-      <!-- ===== Thursday: fill these in ===== -->
       <h2 id="education">Education</h2>
       <div class="split">
         <div>
