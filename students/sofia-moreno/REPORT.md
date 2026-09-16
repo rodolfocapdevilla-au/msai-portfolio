@@ -1,40 +1,48 @@
 # My page — report
 
 - **Name:** Sofia Moreno
-- **GitHub username:** sofiamorenoatlantis
-- **Branch name:** students/sofia-moreno
-- **Folder name:** students/sofia-moreno
-- **One line:** I'm a Business Administration graduate building expertise at the intersection of AI, analytics, and business strategy — with a focus on process automation and operational decision-making.
-- **Four links:**
-  - LinkedIn: https://www.linkedin.com/in/sof%C3%ADa-moreno-bendala-369584224/
-  - GitHub: https://github.com/sofiamorenoatlantis
-  - Résumé: resume.pdf (a file in my folder, not a web link)
-  - Fourth link: removed on purpose, not used
+- **GitHub username:** [sofiamorenoatlantis](https://github.com/sofiamorenoatlantis)
+- **Live page:** https://rodolfocapdevilla-au.github.io/msai-portfolio/students/sofia-moreno/
 
-## Steps I completed
+## My four project cards
 
-1. Created CLAUDE.md and CONTEXT.md, and installed the GitHub command line tool (gh).
-2. Cloned the class repository and created my own branch, students/sofia-moreno.
-3. Copied the _template folder into students/sofia-moreno and made it my own: my name, photo, links, and quote.
-4. Resized and saved my photo (800x800, under 300 KB) and added my résumé as resume.pdf.
-5. Forked the repository (I didn't have push access to the original) and pushed my branch to my fork.
-6. Opened Pull Request #9 from my fork into the main branch, then set my LinkedIn link and removed the unused fourth link.
-7. Added a "Skills" section with logos for the tools I used (HTML, CSS, Git, GitHub, Markdown, Claude) plus tools from my résumé (Excel, Word, PowerPoint, Google Workspace, Canva). Logos are saved in my own students/sofia-moreno/logos/ folder.
-8. Rewrote the four "Current Projects" cards to describe building this portfolio page: setting it up, using Git & GitHub, opening a Pull Request, and working with an AI coding assistant.
-9. Rewrote the Education & Experience section with my real information from my résumé, including my Bachelor of Business Administration (Summa Cum Laude, GPA 3.98/4.00).
-10. Replaced my placeholder quote with a professional one-sentence summary based on my résumé.
-11. PR #9 was merged. Since I had more changes after that, I opened a second pull request, PR #15, for the Skills/Education update and the new quote.
+1. **Building this portfolio page** — I started from the class template and turned it into my own page: my name, my photo, my links, and my own words. I checked the page in a local preview after each change, and went through a checklist to catch leftover placeholder text, broken links, and inconsistent naming before calling it done. The result is a working personal page, live on the class site.
+2. **Learning version control with Git & GitHub** — I created my own branch to make changes safely, saved my work as commits with short messages, and pushed those commits up to GitHub. Partway through, I created a new branch just before other work was merged into the shared project, so I learned to check for the latest version first and rebuilt the branch from it. I now understand the difference between a branch, a version of the project I can work on, and a folder, where my files actually live.
+3. **Opening a Pull Request** — Since I did not have permission to push directly to the class repository, I made my own copy of it on GitHub, called a fork, and pushed my branch there instead. I opened Pull Request #9 to propose adding my page, and it was reviewed and merged into the main class site. I opened a second pull request, PR #15, for later updates, and that one was merged as well.
+4. **Building with an AI coding assistant** — I worked with Claude Code, an AI coding assistant, to make changes to my page without needing to already know how to code. It helped me resize and compress my photo and project pictures to meet the site's size rules, and check my page for leftover placeholder text and broken links. It also helped me manage Git and GitHub, including creating branches, committing changes, and opening pull requests.
 
-## Every commit I made (in my student folder)
+## Notes received on my pull requests
 
-| Commit | Message |
-|---|---|
-| 8ed3610 | Add Sofia Moreno page |
-| 9b99268 | Set LinkedIn link, remove unused fourth link |
-| 0142470 | Add Skills section with logos and update Education & Experience with resume details |
-| 70e65f6 | Update intro sentence to a professional summary from resume |
+No review comments were left on any of my pull requests (#9, #15, #23, #40, #42, #49) —
+each was merged directly (or, for #49, awaiting merge), without written notes.
+
+## Classmate I reviewed
+
+*Not yet added.* Tell me who you reviewed and what you told them, and I'll fill this in.
+
+## Every commit I made
+
+| Commit | Date | Message |
+|---|---|---|
+| `8ed3610` | 2026-09-09 | Add Sofia Moreno page |
+| `9b99268` | 2026-09-09 | Set LinkedIn link, remove unused fourth link |
+| `0142470` | 2026-09-11 | Add Skills section with logos and update Education & Experience with resume details |
+| `70e65f6` | 2026-09-11 | Update intro sentence to a professional summary from resume |
+| `9be104d` | 2026-09-11 | Remove placeholder project images (no real photos available yet) |
+| `60cc613` | 2026-09-11 | Add pictures to project cards and expand card descriptions |
+| `958ba85` | 2026-09-11 | Make project card pictures clickable, linking to more info |
+| `5621518` | 2026-09-16 | Pass RUBRIC.md: rewrite quote, remove LinkedIn link (rubric items 1, 2, 4) |
+| `b378b3d` | 2026-09-16 | Restore dropped whole-card-clickable fix, add agent self-critique |
+| `53966dc` | 2026-09-16 | Revert quote and LinkedIn link per my own correction (pushed after #42 had already merged — see PR #49) |
+| `fbf6688` | 2026-09-17 | Land the quote/LinkedIn revert that never made it into main, for real this time |
 
 ## Pull requests
 
-- PR #9 (merged): https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/9
-- PR #15 (open — my latest changes): https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/15
+| PR | Title | Status |
+|---|---|---|
+| [#9](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/9) | Add Sofia Moreno page | Merged |
+| [#15](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/15) | Add Sofia Moreno page | Merged |
+| [#23](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/23) | Round two — Sofia Moreno | Merged |
+| [#40](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/40) | Round three — Sofia Moreno | Merged |
+| [#42](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/42) | Round four — Sofia Moreno | Merged (but merged *before* my quote/LinkedIn correction was pushed, so that correction never reached main — see #49) |
+| [#49](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/49) | Round five — Sofia Moreno | **Open, needs merge** — this is the assignment's pull request |
