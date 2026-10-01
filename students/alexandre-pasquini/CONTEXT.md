@@ -27,7 +27,19 @@
 - Files uploaded to my fork and moved to branch student/alexandre-pasquini
 - Pull request opened against rodolfocapdevilla-au/msai-portfolio main: PR #62 (https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/62)
 
+## Round two (Module 5.2)
+- PR #62 was merged into rodolfocapdevilla-au/msai-portfolio main — round one is done and live.
+- Replaced all 4 placeholder.jpg images on the project cards with real, custom pictures made for
+  each project, saved inside my own folder (not assets/): project-monday-dashboard.svg,
+  project-rag-assistant.svg, project-axelis-ai.svg, project-ai-revenue-engine.svg. Each is under
+  1.5 KB and matches the site's own palette (blue #1E6FE0, red #E23B3B) instead of a generic stock
+  image.
+- Same branch (student/alexandre-pasquini) — no new branch created, per the rule that a merged
+  request never reopens but the branch keeps going.
+- Opened a new pull request, "Round two — Alexandre Pasquini", against
+  rodolfocapdevilla-au/msai-portfolio main.
+
 ## Next step
-1. Paste the PR link in the class chat and wait for review
-2. Keep REPORT.md up to date (notes received, classmate review)
-3. Optional: replace the placeholder images on the project cards with my own
+1. Paste the round-two PR link in the class chat and wait for review
+2. Leave feedback on a classmate's page (graded, Step 12)
+3. Before next class: send the page link to one person outside class and ask "what do you think I do?"

@@ -1,0 +1,18 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#F7F9FC"/><g transform="translate(0,40)">
+<rect x="24" y="24" width="352" height="40" rx="8" fill="#1E6FE0"/>
+<text x="40" y="49" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#fff" font-weight="700">Monday Supplier Dashboard</text>
+<rect x="24" y="80" width="108" height="60" rx="6" fill="#fff" stroke="#E4E8EF"/>
+<text x="36" y="104" font-family="Arial" font-size="11" fill="#4A4A4A">On-time</text>
+<text x="36" y="126" font-family="Arial" font-size="20" fill="#111" font-weight="700">88%</text>
+<rect x="146" y="80" width="108" height="60" rx="6" fill="#fff" stroke="#E4E8EF"/>
+<text x="158" y="104" font-family="Arial" font-size="11" fill="#4A4A4A">Incidents</text>
+<text x="158" y="126" font-family="Arial" font-size="20" fill="#E23B3B" font-weight="700">2</text>
+<rect x="268" y="80" width="108" height="60" rx="6" fill="#fff" stroke="#E4E8EF"/>
+<text x="280" y="104" font-family="Arial" font-size="11" fill="#4A4A4A">Savings</text>
+<text x="280" y="126" font-family="Arial" font-size="20" fill="#111" font-weight="700">$3.2k</text>
+<rect x="24" y="156" width="230" height="14" rx="4" fill="#1E6FE0"/>
+<rect x="264" y="156" width="112" height="14" rx="4" fill="#E4E8EF"/>
+<rect x="24" y="178" width="180" height="14" rx="4" fill="#1E6FE0"/>
+<rect x="212" y="178" width="164" height="14" rx="4" fill="#E4E8EF"/>
+</g></svg>

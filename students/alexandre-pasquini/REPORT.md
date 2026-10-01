@@ -32,11 +32,18 @@
 
 ## Notes Received on My Pull Request
 
-None yet. PR #62 is open and waiting for review.
+PR #62 was merged — no reviewer notes were left on it.
 
 ## Classmate I Reviewed
 
-*Not done yet.*
+*TO DO — pick one classmate's page on the class site, leave feedback with the Feedback button (Step 12, graded).*
+
+## Round Two Changes (Module 5.2)
+
+Replaced the 4 generic placeholder.jpg images on the project cards with real, custom pictures
+made specifically for each project (project-monday-dashboard.svg, project-rag-assistant.svg,
+project-axelis-ai.svg, project-ai-revenue-engine.svg), saved inside my own folder and matching
+the site's own colours instead of stock art.
 
 ## Commit History
 
@@ -45,9 +52,11 @@ None yet. PR #62 is open and waiting for review.
 | `be7e4a0` | 2026-09-28 | Add files via upload (first version of my folder) |
 | `26d30d3` | 2026-09-28 | Add Alexandre Pasquini page (résumé without phone, updated CONTEXT.md) |
 | — | 2026-09-28 | Add REPORT.md and PR number in CONTEXT.md |
+| — | 2026-09-30 | Round two — real project card images, updated CONTEXT.md |
 
 ## Pull Requests
 
 | PR | Title | Status |
 |---|---|---|
-| [#62](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/62) | Add Alexandre Pasquini page | Open |
+| [#62](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/62) | Add Alexandre Pasquini page | Merged |
+| Round two — Alexandre Pasquini | (link once opened) | Open |

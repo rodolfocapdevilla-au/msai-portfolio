@@ -1,0 +1,10 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#F7F9FC"/><g transform="translate(0,40)">
+<rect x="130" y="30" width="140" height="164" rx="4" fill="#1E6FE0"/>
+<rect x="130" y="30" width="10" height="164" fill="#1857B4"/>
+<text x="154" y="90" font-family="Georgia,serif" font-size="16" fill="#fff" font-weight="700">The AI</text>
+<text x="154" y="112" font-family="Georgia,serif" font-size="16" fill="#fff" font-weight="700">Revenue</text>
+<text x="154" y="134" font-family="Georgia,serif" font-size="16" fill="#fff" font-weight="700">Engine</text>
+<text x="154" y="170" font-family="Arial" font-size="10" fill="#DCEAFF">A. Pasquini</text>
+<rect x="118" y="26" width="8" height="172" fill="#E4E8EF"/>
+</g></svg>
