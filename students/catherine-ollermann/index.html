@@ -3,19 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- ========== EDIT 1 of 5 — your name in the browser tab ========== -->
 <title>Catherine Ollermann — MS in Artificial Intelligence</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/style.css">
+<style>
+  #projects + .cards .card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: center;
+  }
+</style>
 </head>
 <body>
 
 <nav class="nav">
-  <!-- EDIT 1 — your name here too -->
   <a class="badge" href="#top">Catherine Ollermann</a>
   <a class="pill" href="#projects">Projects</a>
   <a class="pill" href="#education">Education &amp; Experience</a>
@@ -29,73 +34,58 @@
 
     <!-- ================= LEFT RAIL ================= -->
     <aside>
-      <!-- ===== EDIT 2 of 5 — replace photo.jpg in this folder with your own ===== -->
       <div class="photo-card">
         <img src="photo.jpg" alt="Photograph of Catherine Ollermann">
       </div>
-
-      <!-- ===== EDIT 3 of 5 — your four links. Every href must start with https:// ===== -->
       <a class="rail-link" href="https://www.linkedin.com/in/catherine-ollermann">LinkedIn profile</a>
       <a class="rail-link" href="https://github.com/catherineollermann-dot">GitHub profile</a>
-      <a class="rail-link" href="https://github.com/catherineollermann-dot/Catherine-Ollermann-resume/blob/main/Catherine%20Ollermann%20-%20resume.pdf">CV</a>
+      <a class="rail-link" href="resume.pdf">CV</a>
       <a class="rail-link" href="https://energy-intelligence-platform-project.streamlit.app/">Featured Project</a>
     </aside>
 
     <!-- ================= MAIN COLUMN ================= -->
     <main>
-      <!-- EDIT 1 — and here -->
       <h1>Catherine Ollermann</h1>
-
-      <!-- ===== EDIT 4 of 5 — one or two true sentences. Not a job title. ===== -->
       <p class="quote">
         I'm a Petroleum Engineer exploring how AI can solve real-world challenges.
       </p>
-
-      <!-- ===== EDIT 5 of 5 — four project cards ===== -->
       <h2 id="projects">Current Projects</h2>
       <div class="cards">
 
         <article class="card">
-          <img src="../../assets/placeholder.jpg" alt="">
-          <h3>Atlantis University Flyer Skills</h3>
-          <p>What it is. What you did. What came out.</p>
-        </article>
-
-        <article class="card">
-          <img src="../../assets/placeholder.jpg" alt="">
-          <h3>Base44 Landing Page</h3>
-          <p>What it is. What you did. What came out.</p>
-        </article>
-
-        <article class="card">
-          <img src="../../assets/placeholder.jpg" alt="">
+          <img src="energy-intelligence-platform.jpg" alt="Energy Intelligence Platform">
           <h3>Energy Intelligence Platform</h3>
-          <p>What it is. What you did. What came out.</p>
+          <p>This application analyzes energy data and shows trends in charts. I built it with Python and Streamlit, including experimental projections of trends over five years. The result is a working Streamlit application for exploring energy trends.</p>
         </article>
 
         <article class="card">
-          <img src="../../assets/placeholder.jpg" alt="">
+          <img src="aws-energy-pipeline.jpg" alt="Cloud-Based Energy Analytics Pipeline on AWS">
           <h3>Cloud-Based Energy Analytics Pipeline on AWS</h3>
-          <p>What it is. What you did. What came out.</p>
+          <p>This project uses cloud tools to process energy data for analysis. I built it with Python and AWS, using Amazon S3, Apache Spark, and DynamoDB, and included data processing and machine learning components. The result demonstrates a complete cloud data pipeline for energy analytics.</p>
+        </article>
+
+        <article class="card">
+          <img src="customer-sentiment-intelligence.jpg" alt="Customer Sentiment Intelligence">
+          <h3>Customer Sentiment Intelligence</h3>
+          <p>This project uses machine learning to classify IMDb movie reviews as positive or negative. I used Python and PyTorch to prepare the review data, train the model, and evaluate its predictions. The model achieved 79% accuracy.</p>
         </article>
 
       </div>
-
-      <!-- ===== Thursday: fill these in ===== -->
       <h2 id="education">Education &amp; Experience</h2>
       <div class="split">
         <div>
           <h3>Education</h3>
           <ul class="chain">
-            <li>MS in Artificial Intelligence<div class="where">Atlantis University</div></li>
-            <li>Your previous degree<div class="where">Institution</div></li>
+            <li>M.S. in Artificial Intelligence<div class="where">Atlantis University</div></li>
+            <li>Graduate Studies in Science &amp; Technology Management (Computer Science Focus)<div class="where">Avila University</div></li>
+            <li>B.S. in Petroleum Engineering<div class="where">Federal University of Pelotas</div></li>
           </ul>
         </div>
         <div>
           <h3>Experience</h3>
           <ul class="chain">
-            <li>Your role<div class="where">Organisation</div></li>
-            <li>An earlier role<div class="where">Organisation</div></li>
+            <li>Business Analyst Intern<div class="where">Gas Energy Chemicals</div></li>
+            <li>Engineering Tutor<div class="where">Federal University of Pelotas</div></li>
           </ul>
         </div>
       </div>
