@@ -4,20 +4,105 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- ========== EDIT 1 of 5 — your name in the browser tab ========== -->
 <title>The Last Survivor of Office Hours — MS in Artificial Intelligence</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/style.css">
+
+<style>
+  .subtitle{font-size:15px;color:var(--ink-soft);font-weight:600;margin:-28px 0 28px}
+
+  .hero-grid{display:grid;grid-template-columns:340px 1fr;gap:40px;align-items:start;margin-bottom:32px}
+  @media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
+  .hero-text h1{margin-bottom:16px}
+  .hero-h2{margin-top:40px!important}
+  #education{margin-top:56px!important}
+  .modal-illustration{width:100%;max-width:220px;border-radius:12px;display:block;margin:0 auto 20px}
+
+  .story-grid{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+  .story-pill{appearance:none;-webkit-appearance:none;display:block;width:100%;box-sizing:border-box;
+    background:#fff;color:var(--blue);border:1px solid var(--line);border-radius:var(--r);
+    padding:16px;font:inherit;font-weight:600;font-size:15px;text-align:center;
+    cursor:pointer;transition:background-color .15s,border-color .15s}
+  .story-pill:hover{background:#EEF4FF;border-color:var(--blue);text-decoration:none}
+
+  .proj-card{cursor:pointer;border:1px solid var(--line);border-radius:12px;background:#fff;
+    text-align:left;padding:14px;width:100%;font:inherit;color:inherit;transition:border-color .15s}
+  .proj-card:hover{border-color:var(--blue)}
+  .proj-card img{width:100%;border-radius:8px;aspect-ratio:4/3;object-fit:cover;margin-bottom:12px}
+  .proj-card h3{display:flex;justify-content:space-between;align-items:center}
+  .proj-card h3 .chev{color:var(--ink-soft);font-weight:400}
+  .proj-card p{margin:6px 0 0;font-size:14px;color:var(--ink-soft)}
+
+  .modal-overlay{position:fixed;inset:0;background:rgba(17,17,17,.55);display:flex;
+    align-items:center;justify-content:center;padding:20px;z-index:100}
+  .modal-overlay[hidden]{display:none}
+  .modal-box{background:#fff;border-radius:16px;max-width:640px;width:100%;max-height:85vh;
+    overflow-y:auto;padding:32px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+  .modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;
+    border:1px solid var(--line);background:#fff;font-size:18px;cursor:pointer;line-height:1}
+  .modal-close:hover{background:var(--bg-soft)}
+  .modal-box h3{font-size:21px;margin:0 24px 16px 0}
+  .modal-box h4{font-size:13px;text-transform:uppercase;letter-spacing:.04em;
+    color:var(--ink-soft);margin:26px 0 10px}
+  .modal-box .center{text-align:center;font-weight:700;margin:14px 0}
+  .modal-box .lead{font-size:15px;line-height:1.6}
+
+  .stat-row{display:flex;justify-content:space-between;gap:16px;padding:6px 0;
+    border-bottom:1px solid var(--line);font-size:14px}
+  .stat-row:last-child{border-bottom:0}
+
+  .bar-row{margin:10px 0}
+  .bar-row .bar-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
+  .bar-track{background:var(--bg-soft);border-radius:6px;height:10px;overflow:hidden}
+  .bar-fill{background:var(--blue);height:100%;border-radius:6px}
+
+  .flow-list{margin:12px 0}
+  .flow-step{border:1px solid var(--line);border-radius:8px;padding:8px 14px;text-align:center;
+    font-weight:600;font-size:14px;max-width:320px;margin:0 auto}
+  .flow-arrow{text-align:center;color:var(--ink-soft);margin:2px 0;font-size:13px}
+
+  .word-mock{border:1px solid var(--line);border-radius:8px;padding:14px;background:var(--bg-soft);
+    font-size:13px;color:var(--ink-soft);text-align:center;letter-spacing:.02em;font-weight:600}
+
+  .before-after{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}
+  .before-after>div{border:1px solid var(--line);border-radius:8px;padding:12px;font-size:14px}
+  .before-after .lbl{font-size:12px;text-transform:uppercase;color:var(--ink-soft);
+    letter-spacing:.04em;margin-bottom:6px;display:block}
+  @media (max-width:480px){.before-after{grid-template-columns:1fr}}
+
+  .archive-line{display:flex;gap:12px;padding:7px 0;font-size:14px;border-bottom:1px solid var(--line)}
+  .archive-line:last-child{border-bottom:0}
+  .archive-time{color:var(--ink-soft);white-space:nowrap;font-size:12.5px;min-width:68px}
+
+  .result-panel{background:var(--bg-soft);border-radius:10px;padding:16px;margin-top:18px}
+  .result-panel .big{font-weight:800;color:var(--red);font-size:15px}
+  .result-panel .final{margin-top:12px;font-style:italic;color:var(--ink-soft);font-size:14px}
+  .checklist{list-style:none;padding:0;margin:10px 0;font-size:14px}
+  .checklist li{padding:4px 0}
+
+  .fb-btn{position:fixed;bottom:24px;right:24px;background:var(--red);color:#fff;border:none;
+    border-radius:999px;padding:14px 22px;font-weight:700;font-size:14px;display:flex;
+    align-items:center;gap:8px;cursor:pointer;box-shadow:0 6px 20px rgba(226,59,59,.35);z-index:90}
+  .fb-btn:hover{background:#c92f2f}
+  .fb-tabs{display:flex;gap:8px;margin-bottom:18px}
+  .fb-tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;
+    font-weight:600;font-size:13px;cursor:pointer;color:var(--ink-soft)}
+  .fb-tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .fb-panel[hidden]{display:none}
+  .fb-item{border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px;background:var(--bg-soft)}
+  .fb-item p{margin:0 0 8px;white-space:pre-line;font-size:14px}
+  .fb-item time{font-size:12px;color:var(--ink-soft)}
+  .fb-leave p{font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0 0 12px}
+</style>
 </head>
 <body>
 
 <nav class="nav">
-  <!-- EDIT 1 — your name here too -->
   <a class="badge" href="#top">The Last Survivor of Office Hours</a>
-  <a class="pill" href="#projects">Projects</a>
+  <a class="pill" href="#projects">The Journey</a>
   <a class="pill" href="#education">Education &amp; Experience</a>
   <a class="pill" href="../../">All students</a>
   <span class="spacer"></span>
@@ -25,89 +110,330 @@
 </nav>
 
 <div class="wrap" id="top">
-  <div class="cols">
 
-    <!-- ================= LEFT RAIL ================= -->
-    <aside>
-      <!-- ===== EDIT 2 of 5 — replace photo.jpg in this folder with your own ===== -->
+  <div class="hero-grid">
+    <div>
       <div class="photo-card">
         <img src="photo.jpg" alt="Photograph of The Last Survivor of Office Hours">
       </div>
+      <div class="story-grid">
+        <button type="button" class="story-pill" data-modal="modal-excel">Excel Black Belt</button>
+        <button type="button" class="story-pill" data-modal="modal-apa7">APA 7 Medal of Survival</button>
+        <button type="button" class="story-pill" data-modal="modal-3am">Study Group Chat Archive (3 AM Edition)</button>
+        <a class="story-pill" href="https://github.com/mariiaau">Late-Night Commit Log</a>
+      </div>
+    </div>
 
-      <!-- ===== EDIT 3 of 5 — your four links. Every href must start with https:// ===== -->
-      <a class="rail-link" href="#projects">Study Group Chat Archive (3 AM Edition)</a>
-      <a class="rail-link" href="https://github.com/mariiaau">The Late-Night Commit Log</a>
-      <a class="rail-link" href="https://example.com/mariia-osokina-cv.pdf">Grade Report (Redacted for Emotional Safety)</a>
-      <a class="rail-link" href="https://example.com/mariia-osokina">The Syllabus That Started It All</a>
-    </aside>
-
-    <!-- ================= MAIN COLUMN ================= -->
-    <main>
-      <!-- EDIT 1 — and here -->
+    <div class="hero-text">
       <h1>The Last Survivor of Office Hours</h1>
 
-      <!-- ===== EDIT 4 of 5 — one or two true sentences. Not a job title. ===== -->
       <p class="quote">
-        "After the storm comes a calm — mine arrived sometime around semester two."
+        "They said after the storm comes the calm. It took me two semesters to get there."
       </p>
+      <p class="subtitle">When MS in AI came along… Calm: canceled.</p>
 
-      <!-- ===== EDIT 5 of 5 — four project cards ===== -->
-      <h2 id="projects">Current Projects</h2>
+      <h2 id="projects" class="hero-h2">THE JOURNEY SO FAR</h2>
       <div class="cards">
 
-        <article class="card">
-          <img src="../../assets/placeholder.jpg" alt="">
-          <h3>Mastering the 3 AM Homework Shift</h3>
-          <p>Discovered that the brain technically still functions at 3 AM. Barely. Results inconclusive but the homework got submitted.</p>
-        </article>
+        <button type="button" class="proj-card" data-modal="modal-semesters">
+          <img src="image3-semesters.jpg" alt="">
+          <h3>Two Semesters Later… I Had a System <span class="chev">›</span></h3>
+          <p>Nobody was more surprised than me.</p>
+        </button>
 
-        <article class="card">
-          <img src="../../assets/placeholder.jpg" alt="">
-          <h3>The First Semester All-Nighter Tracker</h3>
-          <p>A live dashboard of coffee consumed vs. hours slept. First semester average: alarming. Second semester: still alarming, but with better snacks.</p>
-        </article>
-
-        <article class="card">
-          <img src="../../assets/placeholder.jpg" alt="">
-          <h3>Predicting Whether the Deadline Will Actually Move (It Won't)</h3>
-          <p>Built a model with 100% accuracy: the answer is always no, especially at 3 AM.</p>
-        </article>
-
-        <article class="card">
-          <img src="../../assets/placeholder.jpg" alt="">
-          <h3>Surviving the Professor Who Grades in Red Ink and Disappointment</h3>
-          <p>A full case study on going straight into the hardest class on day one — no warm-up round, no mercy, and definitely no sleep for the first three months.</p>
-        </article>
+        <button type="button" class="proj-card" data-modal="modal-ai">
+          <img src="image4-ai.jpg" alt="">
+          <h3>NEW LEVEL UNLOCKED: AI <span class="chev">›</span></h3>
+          <p>Sleep: down. Stress: up. Curiosity: off the charts.</p>
+        </button>
 
       </div>
+    </div>
+  </div>
 
-      <!-- ===== Thursday: fill these in ===== -->
+  <main>
       <h2 id="education">Education &amp; Experience</h2>
       <div class="split">
         <div>
           <h3>Education</h3>
           <ul class="chain">
-            <li>MS in Artificial Intelligence<div class="where">Atlantis University</div></li>
-            <li>School of Trial by Fire, Class of Straight to the Deep End (Night Shift Cohort)<div class="where">Institution</div></li>
+            <li>MS in Artificial Intelligence<div class="where">In Progress</div></li>
+            <li>MBA<div class="where">Completed</div></li>
+            <li>MBA — Round Two<div class="where">In Progress</div></li>
           </ul>
         </div>
         <div>
           <h3>Experience</h3>
           <ul class="chain">
-            <li>Professional Deadline Negotiator<div class="where">The Group Project Survivors Club</div></li>
-            <li>Intern, 3 AM Homework Division<div class="where">First Semester Survival Squad</div></li>
+            <li>Graduate Student<div class="where">Professional experience meets student life.</div></li>
+            <li>AI Newcomer<div class="where">Learning fast. Asking a lot of questions.</div></li>
           </ul>
         </div>
       </div>
 
       <footer>
-        MS in Artificial Intelligence · Atlantis University
+        © 2026 The Last Survivor of Office Hours<br>
+        Built with deadlines, great people, a lot of learning, plenty of coffee, and an increasing amount of AI.
       </footer>
     </main>
 
+</div>
+
+<!-- ===== Feedback ===== -->
+<button type="button" class="fb-btn" data-modal="modal-feedback">💬 Feedback</button>
+
+<div class="modal-overlay" id="modal-feedback" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button type="button" class="modal-close" data-close>×</button>
+    <h3>Feedback</h3>
+    <div class="fb-tabs">
+      <button type="button" class="fb-tab active" data-tab="received">Received</button>
+      <button type="button" class="fb-tab" data-tab="leave">Leave Feedback</button>
+    </div>
+
+    <div class="fb-panel" data-panel="received">
+      <div class="fb-item"><p>NOw is a great Page, but still mising pictures</p><time>9/15/2026, 8:34:46 PM</time></div>
+      <div class="fb-item"><p>Mariia you forgot crikable files!!!
+but do  not make another headake</p><time>9/15/2026, 8:27:52 PM</time></div>
+      <div class="fb-item"><p>I like the clean and simple look of the portfolio. The personal quote gives it a nice touch, and the layout is easy to follow. I think adding more details about the projects and experience would make the portfolio more complete and show her work better.</p><time>9/15/2026, 7:14:18 PM</time></div>
+      <div class="fb-item"><p>Hi Mariia, I like your page, maybe you can put more colors in your page to looks great!</p><time>9/15/2026, 6:57:52 PM</time></div>
+      <div class="fb-item"><p>you Need to upload images and complette data in the projects!!
+
+let me know if you need help</p><time>9/15/2026, 6:54:52 PM</time></div>
+      <div class="fb-item"><p>add some pictures and symbols</p><time>9/15/2026, 6:54:05 PM</time></div>
+    </div>
+
+    <div class="fb-panel fb-leave" data-panel="leave" hidden>
+      <p>This page is a simple static page with no server behind it, so there's no way for it to save a new comment automatically.</p>
+      <p>Want to leave feedback? Message me directly — see The Late-Night Commit Log link for my GitHub, or reach me through our class chat.</p>
+    </div>
   </div>
 </div>
 
+<<<<<<< agent/pass-education-order
+<!-- ===== Story modal: Excel ===== -->
+<div class="modal-overlay" id="modal-excel" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button type="button" class="modal-close" data-close>×</button>
+    <img src="image1-excel.jpg" alt="" class="modal-illustration">
+    <h3>WELCOME BACK, EXCEL. APPARENTLY.</h3>
+    <p class="lead">One spreadsheet became three. Three became twelve.<br>Somewhere along the way, this started feeling suspiciously familiar.</p>
+
+    <h4>Career flashback detected</h4>
+    <div class="stat-row"><span>Excel files</span><span>Multiplying</span></div>
+    <div class="stat-row"><span>Tabs</span><span>Out of control</span></div>
+    <div class="stat-row"><span>Deadline</span><span>Approaching</span></div>
+    <div class="stat-row"><span>Delegation option</span><span>Not part of the assignment</span></div>
+    <div class="stat-row"><span>Coffee</span><span>Operational</span></div>
+
+    <p class="lead" style="margin-top:22px">Then came the phrase…</p>
+    <p class="center">"This should be easy."</p>
+
+    <div class="before-after">
+      <div><span class="lbl">First time</span>Oh, great.</div>
+      <div><span class="lbl">Several hours later</span>Interesting definition of "easy."</div>
+    </div>
+
+    <h4>Early warning system</h4>
+    <div class="stat-row"><span>Phrase detected</span><span>"This should be easy."</span></div>
+    <div class="stat-row"><span>Translation</span><span>Clear your evening.</span></div>
+    <div class="stat-row"><span>Recommended action</span><span>Open Excel.</span></div>
+    <div class="stat-row"><span>Probability of finishing early</span><span>Statistically insignificant.</span></div>
+    <div class="stat-row"><span>Trust in the word "easy"</span><span>Permanently recalibrated.</span></div>
+
+    <h4>A few assignments later…</h4>
+    <div class="before-after">
+      <div><span class="lbl">Before</span>Assignment arrives → WHAT?!</div>
+      <div><span class="lbl">After</span>Assignment arrives → Okay. Open Excel.</div>
+    </div>
+
+    <p class="center">SAME CHAOS. BETTER OPERATING SYSTEM.</p>
+
+    <h4>Excel Black Belt — Reactivated</h4>
+    <p class="lead">Apparently, muscle memory also applies to spreadsheets.</p>
+    <p class="lead">The word "easy" remains under review.</p>
+  </div>
+</div>
+
+<!-- ===== Story modal: APA 7 ===== -->
+<div class="modal-overlay" id="modal-apa7" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button type="button" class="modal-close" data-close>×</button>
+    <img src="image2-apa7.jpg" alt="" class="modal-illustration">
+    <h3>THE APA 7 MEDAL OF SURVIVAL</h3>
+    <p class="lead">New country. New university. New academic rules.<br>And apparently, punctuation now has consequences.</p>
+
+    <h4>It started with…</h4>
+    <p class="center">"It's just a citation."</p>
+
+    <div class="flow-list">
+      <div class="flow-step">Author</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Year</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Italics</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Capitalization</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">DOI</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">References</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Punctuation</div>
+    </div>
+    <p class="lead" style="font-style:italic;text-align:center">At some point, punctuation became an academic discipline.</p>
+
+    <h4>And then I found this in Word…</h4>
+    <div class="word-mock">REFERENCES → INSERT CITATION → ADD NEW SOURCE</div>
+    <p class="center" style="margin-top:18px">WAIT. WORD COULD DO THIS THE WHOLE TIME?!</p>
+    <ul class="checklist">
+      <li>Insert citations ✓</li>
+      <li>Remember sources ✓</li>
+      <li>Build bibliography ✓</li>
+    </ul>
+    <p class="lead">This information would have been extremely useful several assignments earlier.</p>
+
+    <h4>APA 7 Survivor</h4>
+    <p class="lead"><strong>International Student Division</strong><br>Specialization: Citation Engineering</p>
+    <p class="lead">This medal was not given. It was earned.<br>Practically suffered into existence.</p>
+
+    <h4>2026 Update</h4>
+    <p class="lead">Now AI can help with this.<br>Timing is everything.</p>
+  </div>
+</div>
+
+<!-- ===== Project modal: Two Semesters ===== -->
+<div class="modal-overlay" id="modal-semesters" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button type="button" class="modal-close" data-close>×</button>
+    <h3>THE MBA LEARNING CURVE</h3>
+
+    <h4>Semester 1 — What is happening?</h4>
+    <div class="flow-list">
+      <div class="flow-step">Assignment arrives</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Read everything</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Open 14 tabs</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Read again</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Start working</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Discover another requirement</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Question life choices</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Finish</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Check</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Check again</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Submit</div>
+    </div>
+
+    <div class="bar-row"><div class="bar-label"><span>Stress</span><span>10/10</span></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
+    <div class="bar-row"><div class="bar-label"><span>Sleep</span><span>2/10</span></div><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div></div>
+    <div class="bar-row"><div class="bar-label"><span>Confidence</span><span>2/10</span></div><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div></div>
+
+    <p class="lead" style="margin-top:16px">Everything was new. Everything took forever.</p>
+
+    <h4>Semester 2 — Okay. I see how this works.</h4>
+    <div class="flow-list">
+      <div class="flow-step">Assignment arrives</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Read</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Figure out what they actually want</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Plan</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Do</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Check</div><div class="flow-arrow">↓</div>
+      <div class="flow-step">Submit</div>
+    </div>
+
+    <div class="bar-row"><div class="bar-label"><span>Stress</span><span>6/10</span></div><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div></div>
+    <div class="bar-row"><div class="bar-label"><span>Sleep</span><span>5/10</span></div><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div></div>
+    <div class="bar-row"><div class="bar-label"><span>Confidence</span><span>7/10</span></div><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div></div>
+
+    <p class="lead" style="margin-top:10px">Deadline survival system: Operational ✓</p>
+    <p class="center">SAME CHAOS. BETTER OPERATING SYSTEM.</p>
+    <p class="lead">Finally, things were getting easier.<br>A normal person might have enjoyed this.<br>I chose AI.</p>
+  </div>
+</div>
+
+<!-- ===== Project modal: AI ===== -->
+<div class="modal-overlay" id="modal-ai" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button type="button" class="modal-close" data-close>×</button>
+    <h3>SO… APPARENTLY WE'RE DOING THIS AGAIN.</h3>
+    <p class="lead">Just when I thought I had a functioning system…<br>new level unlocked.</p>
+
+    <h4>Current status</h4>
+    <div class="stat-row"><span>Sleep</span><span>↓↓↓</span></div>
+    <div class="stat-row"><span>Stress</span><span>↑↑↑</span></div>
+    <div class="stat-row"><span>Things I still need to learn</span><span>Multiplying</span></div>
+    <div class="stat-row"><span>Curiosity</span><span>OFF THE CHARTS</span></div>
+  </div>
+</div>
+
+<!-- ===== Project modal: 3 AM Decision ===== -->
+<div class="modal-overlay" id="modal-3am" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button type="button" class="modal-close" data-close>×</button>
+    <h3>STUDY GROUP CHAT ARCHIVE: THE 3 AM DECISION</h3>
+
+    <div class="archive-line"><span class="archive-time">2:41 AM</span><span>So… which scenario are we choosing?</span></div>
+    <div class="archive-line"><span class="archive-time">2:42 AM</span><span>RESTRICT. Definitely restrict.</span></div>
+    <div class="archive-line"><span class="archive-time">2:44 AM</span><span>SUSPEND. I'm not changing my answer.</span></div>
+    <div class="archive-line"><span class="archive-time">2:46 AM</span><span>CONTINUE. Guys, continue makes the most sense.</span></div>
+    <div class="archive-line"><span class="archive-time">2:49 AM</span><span>Can we please agree on one?</span></div>
+    <div class="archive-line"><span class="archive-time">2:52 AM</span><span>Restrict.</span></div>
+    <div class="archive-line"><span class="archive-time">2:53 AM</span><span>Suspend.</span></div>
+    <div class="archive-line"><span class="archive-time">2:53 AM</span><span>Continue.</span></div>
+    <div class="archive-line"><span class="archive-time">3:01 AM</span><span>We have been discussing this for two hours.</span></div>
+    <div class="archive-line"><span class="archive-time">3:02 AM</span><span>So what did we decide?</span></div>
+    <div class="archive-line"><span class="archive-time">3:03 AM</span><span>Nothing.</span></div>
+    <div class="archive-line"><span class="archive-time">3:04 AM</span><span>Are we at least agreed that it's time to go to sleep?</span></div>
+    <div class="archive-line"><span class="archive-time">3:04 AM</span><span>YES.</span></div>
+
+    <div class="result-panel">
+      <div class="big">GROUP CONSENSUS ACHIEVED ✓</div>
+      <p class="lead" style="margin:8px 0">Decision: Go to sleep.</p>
+      <div class="stat-row"><span>Restrict</span><span>1</span></div>
+      <div class="stat-row"><span>Suspend</span><span>1</span></div>
+      <div class="stat-row"><span>Continue</span><span>1</span></div>
+      <div class="stat-row"><span>Go to sleep</span><span>UNANIMOUS</span></div>
+      <p class="final">MBA teamwork: sometimes the only decision everyone can agree on is to stop making decisions.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var openOverlay = null;
+
+  function openModal(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    openOverlay = el;
+    el.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    if(openOverlay){ openOverlay.hidden = true; }
+    openOverlay = null;
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-modal]').forEach(function(btn){
+    btn.addEventListener('click', function(){ openModal(btn.getAttribute('data-modal')); });
+  });
+  document.querySelectorAll('.modal-overlay').forEach(function(overlay){
+    overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+    overlay.querySelector('[data-close]').addEventListener('click', closeModal);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeModal();
+  });
+
+  document.querySelectorAll('.fb-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      document.querySelectorAll('.fb-tab').forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      var name = tab.getAttribute('data-tab');
+      document.querySelectorAll('.fb-panel').forEach(function(p){
+        p.hidden = p.getAttribute('data-panel') !== name;
+      });
+    });
+  });
+})();
+</script>
+
+=======
 <script src="../../assets/feedback.js" defer></script>
+>>>>>>> main
 </body>
 </html>
