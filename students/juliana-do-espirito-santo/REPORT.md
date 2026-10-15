@@ -6,7 +6,7 @@
 | **GitHub username** | [jujusanto](https://github.com/jujusanto) |
 | **Branch** | `student/juliana-do-espirito-santo` |
 | **Folder** | `students/juliana-do-espirito-santo/` |
-| **Pull requests** | [#63 — Add Juliana do Espirito Santo page](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/63) (merged) · [#76 — Round two — Juliana do Espírito Santo](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/76) (open, waiting for review) |
+| **Pull requests** | [#63 — Add Juliana do Espirito Santo page](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/63) (merged) · [#76 — Round two — Juliana do Espírito Santo](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/76) (merged 2026-10-01) · [#88 — Update CONTEXT.md — Juliana do Espírito Santo](https://github.com/rodolfocapdevilla-au/msai-portfolio/pull/88) (open, waiting for review) |
 
 ## My one line
 > After more than ten years running the brand and marketing of an online store, I now study Artificial Intelligence at Atlantis University. My projects look at how AI can answer customers’ routine questions and show which people go on to become customers.
@@ -33,7 +33,9 @@
 14. Filled in Education & Experience, removed empty cards and links, kept my CV private.
 15. Wrote three plain-language project cards with pictures and opened pull request #76.
 16. Added a public version of my CV (no phone number or address) and matched Experience to it.
-17. Updated the pull request #76 description to cover all my changes.
+17. Updated the pull request #76 description to cover all my changes, and renamed it "Round two" (merged 2026-10-01).
+18. Pulled the latest class project into my fork and my laptop, and merged main into my branch (no new branch, no conflicts).
+19. Opened pull request #88 from the same branch with my updated CONTEXT.md and this REPORT.md.
 
 ## My commits
 | Commit | Date | Message |
@@ -46,6 +48,11 @@
 | `fdae4ac` | 2026-09-30 | Add public CV and match experience to it |
 | `2b96801` | 2026-09-30 | Update CONTEXT.md |
 | `abf2363` | 2026-09-30 | Rewrite my first line and update notes |
+| `4bc7964` | 2026-09-30 | Update CONTEXT.md with Round two |
+| `988713f` | 2026-09-30 | Update REPORT.md with Round two |
+| `80bf0b3` | 2026-10-15 | Update CONTEXT.md after Round two |
+| `e3a29f8` | 2026-10-15 | Add pull request #88 link to CONTEXT.md |
+| (this save) | 2026-10-15 | Update REPORT.md for pull request #88 |
 
 ## Still to do
-Wait for my teacher to merge pull request #76.
+Wait for my teacher to merge pull request #88. While it is open, keep pushing to it.
