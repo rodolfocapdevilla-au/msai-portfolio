@@ -10,13 +10,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="https://rodolfocapdevilla-au.github.io/msai-portfolio/assets/style.css">
 <style>
   .bio{max-width:70ch;margin:-20px 0 40px;color:var(--ink-soft)}
   h2{scroll-margin-top:100px}
   .card-link{display:block;color:inherit}
   .card-link:hover{text-decoration:none;border-color:var(--blue)}
   .card-link .more{display:block;margin-top:10px;font-size:14px;font-weight:600;color:var(--blue)}
+  .contact-form{max-width:560px;display:grid;gap:14px}
+  .contact-form[hidden]{display:none}
+  .contact-form label{display:grid;gap:6px;font-weight:600}
+  .contact-form input,.contact-form textarea{font:inherit;padding:10px 12px;border:1px solid #c9ced6;border-radius:8px;background:#fff;color:inherit}
+  .contact-form small{font-weight:400;color:var(--ink-soft)}
+  .contact-form textarea{min-height:140px;resize:vertical}
+  .contact-form button{justify-self:start;font:inherit;font-weight:700;padding:10px 22px;border:0;border-radius:8px;background:var(--blue);color:#fff;cursor:pointer}
+  .contact-form button:disabled{opacity:.6;cursor:wait}
+  .contact-status{min-height:1.4em;margin:0}
+  .contact-trap{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+  .contact-thanks{max-width:560px;padding:18px 20px;border:1px solid #c9ced6;border-radius:8px}
+  .contact-thanks h3{margin:0 0 6px}
+  .contact-thanks p{margin:0}
 </style>
 </head>
 <body>
@@ -27,7 +40,8 @@
   <a class="pill" href="#projects">Projects</a>
   <a class="pill" href="#publications">Publications</a>
   <a class="pill" href="#education">Education &amp; Experience</a>
-  <a class="pill" href="../../">All students</a>
+  <a class="pill" href="#contact">Contact</a>
+  <a class="pill" href="https://rodolfocapdevilla-au.github.io/msai-portfolio/">All students</a>
   <span class="spacer"></span>
   <a class="pill" href="https://atlantisuniversity.edu/program/master-of-science-in-artificial-intelligence/" target="_blank" rel="noopener">MS in AI</a>
 </nav>
@@ -137,6 +151,34 @@
         </div>
       </div>
 
+      <h2 id="contact">Contact</h2>
+      <form class="contact-form" id="contact-form" method="post" action="https://mario-roldan.cloudflare-mario-roldan.workers.dev/api/contact">
+        <label>Name
+          <input type="text" name="name" required autocomplete="name">
+        </label>
+        <label>Email
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>Phone (optional)
+          <input type="tel" name="phone" autocomplete="tel" placeholder="+1 555 123 4567">
+          <small>Please include your country code, e.g. +1 for the United States.</small>
+        </label>
+        <label>Message
+          <textarea name="message" required></textarea>
+        </label>
+        <div class="contact-trap" aria-hidden="true">
+          <label>Leave this field empty
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+          </label>
+        </div>
+        <button type="submit">Send</button>
+        <p class="contact-status" id="contact-status" role="status"></p>
+      </form>
+      <div class="contact-thanks" id="contact-thanks" role="status" hidden>
+        <h3>Thank you!</h3>
+        <p>Your message was sent. I will get back to you soon.</p>
+      </div>
+
       <footer>
         MS in Artificial Intelligence · Atlantis University
       </footer>
@@ -145,6 +187,33 @@
   </div>
 </div>
 
-<script src="../../assets/feedback.js" defer></script>
+<script src="https://rodolfocapdevilla-au.github.io/msai-portfolio/assets/feedback.js" defer></script>
+<script>
+  // Sends the form to the full Cloudflare address, so it works from both sites.
+  var contactForm = document.getElementById('contact-form');
+  var contactThanks = document.getElementById('contact-thanks');
+  function showThanks() {
+    contactForm.hidden = true;
+    contactThanks.hidden = false;
+  }
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    // A person never sees the hidden field; if it is filled, it was a robot.
+    if (contactForm.elements.website.value) { showThanks(); return; }
+    var status = document.getElementById('contact-status');
+    var button = contactForm.querySelector('button');
+    button.disabled = true;
+    status.textContent = 'Sending...';
+    fetch(contactForm.action, { method: 'POST', body: new FormData(contactForm) })
+      .then(function (r) {
+        if (!r.ok) throw new Error('bad response');
+        showThanks();
+      })
+      .catch(function () {
+        status.textContent = 'Algo salió mal, inténtalo de nuevo';
+        button.disabled = false;
+      });
+  });
+</script>
 </body>
 </html>
