@@ -63,6 +63,10 @@
 (function () {
   var REPO = 'rodolfocapdevilla-au/msai-portfolio';
 
+  /* Pages kept on the site but not listed on this front page. Each one still opens
+     at its own address. Take a slug out of this list to show it again. */
+  var HIDDEN = ['example-page', 'mariia-osokina', 'walid-abdelwahab'];
+
   var COHORTS = [
     { id: 'sd26', slugs: [
         'denise-quimi','example-page','juan-pablo-arnedo','maria-casasperich',
@@ -148,7 +152,9 @@
   }
 
   listFolders()
-    .then(function (slugs) { return Promise.all(slugs.map(readPage)); })
+    .then(function (slugs) {
+      return Promise.all(slugs.filter(function (s) { return HIDDEN.indexOf(s) === -1; }).map(readPage));
+    })
     .then(function (people) {
       COHORTS.forEach(function (c) {
         renderCohort(c, people.filter(function (p) { return p && cohortOf(p.slug) === c; }));
