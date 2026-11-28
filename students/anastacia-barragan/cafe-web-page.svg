@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="800" height="450" role="img" aria-label="Desk seen from above with a laptop showing a cafe web page">
+  <rect width="1200" height="675" fill="#a9c4a4"/>
+  <circle cx="1080" cy="80" r="190" fill="#b7cfb2"/>
+  <circle cx="120" cy="640" r="170" fill="#9bb896"/>
+  <g transform="translate(48 27) scale(.92)">
+  <!-- laptop -->
+  <rect x="260" y="80" width="600" height="395" rx="24" fill="#2e3a35"/>
+  <rect x="282" y="102" width="556" height="351" rx="6" fill="#fbf7ef"/>
+  <!-- web page -->
+  <rect x="282" y="102" width="556" height="38" fill="#e7dfcf"/>
+  <circle cx="306" cy="121" r="7" fill="#d9705c"/><circle cx="328" cy="121" r="7" fill="#e3b04b"/><circle cx="350" cy="121" r="7" fill="#6d9f71"/>
+  <rect x="380" y="111" width="300" height="20" rx="10" fill="#fbf7ef"/>
+  <rect x="302" y="156" width="516" height="150" rx="10" fill="#5b3a29"/>
+  <rect x="330" y="188" width="210" height="22" rx="11" fill="#fbf7ef"/>
+  <rect x="330" y="224" width="160" height="12" rx="6" fill="#d9c3a5"/>
+  <rect x="330" y="252" width="105" height="30" rx="15" fill="#e3b04b"/>
+  <path d="M660 214h90v35a45 35 0 0 1-90 0z" fill="#fbf7ef"/>
+  <path d="M750 224c32-4 32 40-8 36" fill="none" stroke="#fbf7ef" stroke-width="10"/>
+  <path d="M685 198c-16-18 16-26 0-34M722 198c-16-18 16-26 0-34" fill="none" stroke="#d9c3a5" stroke-width="7" stroke-linecap="round"/>
+  <g fill="#ecdcc4"><rect x="302" y="322" width="160" height="115" rx="10"/><rect x="480" y="322" width="160" height="115" rx="10"/><rect x="658" y="322" width="160" height="115" rx="10"/></g>
+  <g fill="#c9803f"><circle cx="382" cy="360" r="25"/><path d="M530 370q10-35 30-35t30 35q-15-12-30-12t-30 12z"/><rect x="710" y="338" width="56" height="42" rx="18"/></g>
+  <g stroke="#8d7a66" stroke-width="9" stroke-linecap="round"><path d="M332 403h100M340 421h80M510 403h100M518 421h80M688 403h100M696 421h80"/></g>
+  <!-- laptop base -->
+  <path d="M215 475h690l45 105a18 18 0 0 1-17 25H187a18 18 0 0 1-17-25z" fill="#cfd6d1"/>
+  <g stroke="#8f9b94" stroke-width="13" stroke-linecap="round" stroke-dasharray="14 16"><path d="M260 505h600M245 530h630M232 555h656"/></g>
+  <rect x="495" y="568" width="130" height="28" rx="8" fill="#b8c1bb"/>
+  <!-- coffee from above -->
+  <circle cx="975" cy="250" r="82" fill="#fbf7ef"/>
+  <rect x="1030" y="236" width="52" height="28" rx="14" fill="#e7dfcf"/>
+  <circle cx="975" cy="250" r="60" fill="#e7dfcf"/>
+  <circle cx="975" cy="250" r="48" fill="#8a5a3b"/>
+  <path d="M975 280c-45-27-28-62 0-38 28-24 45 11 0 38z" fill="#e9cfae"/>
+  <!-- sticky note and pencil -->
+  <g transform="rotate(8 985 450)">
+    <rect x="915" y="385" width="130" height="130" fill="#f4d66b"/>
+    <path d="M935 420h90M935 450h75M935 480h82" stroke="#8a7428" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(-62 200 300)">
+    <rect x="80" y="286" width="220" height="28" fill="#d9705c"/>
+    <path d="M300 286l48 14-48 14z" fill="#ecdcc4"/><path d="M333 296l15 4-15 4z" fill="#2e3a35"/>
+    <rect x="55" y="286" width="26" height="28" rx="7" fill="#e7a6a0"/>
+  </g>
+  </g>
+</svg>

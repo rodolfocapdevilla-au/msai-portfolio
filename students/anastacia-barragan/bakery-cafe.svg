@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="800" height="450" role="img" aria-label="Bakery counter with bread, pastries and coffee">
+  <rect width="1200" height="675" fill="#f8ead8"/>
+  <!-- awning -->
+  <g fill="#b9543a">
+    <path d="M0 0h150v92a75 55 0 0 1-150 0z"/><path d="M300 0h150v92a75 55 0 0 1-150 0z"/>
+    <path d="M600 0h150v92a75 55 0 0 1-150 0z"/><path d="M900 0h150v92a75 55 0 0 1-150 0z"/>
+  </g>
+  <g fill="#e8a56b">
+    <path d="M150 0h150v92a75 55 0 0 1-150 0z"/><path d="M450 0h150v92a75 55 0 0 1-150 0z"/>
+    <path d="M750 0h150v92a75 55 0 0 1-150 0z"/><path d="M1050 0h150v92a75 55 0 0 1-150 0z"/>
+  </g>
+  <!-- display case -->
+  <rect x="200" y="215" width="560" height="260" rx="22" fill="#fffaf2" stroke="#7a4a2e" stroke-width="10"/>
+  <path d="M205 345h550" stroke="#7a4a2e" stroke-width="8"/>
+  <!-- loaves -->
+  <g fill="#d38b47" stroke="#8c5428" stroke-width="5">
+    <path d="M240 338c0-45 30-70 75-70s75 25 75 70z"/>
+    <path d="M410 338c0-40 28-62 68-62s68 22 68 62z"/>
+  </g>
+  <g stroke="#f6d3a2" stroke-width="8" stroke-linecap="round" fill="none">
+    <path d="M285 290l-14 24M320 286l-14 24M355 292l-14 24M450 296l-12 20M485 292l-12 20M518 298l-12 20"/>
+  </g>
+  <!-- croissants -->
+  <g fill="#e3a14f" stroke="#8c5428" stroke-width="5" stroke-linejoin="round">
+    <path d="M580 335q20-55 70-55t70 55q-35-22-70-22t-70 22z"/>
+    <path d="M250 462q20-55 70-55t70 55q-35-22-70-22t-70 22z"/>
+  </g>
+  <!-- cupcakes -->
+  <g>
+    <path d="M440 420h70l-10 48h-50z" fill="#7a4a2e"/><path d="M432 422q5-45 43-45t43 45z" fill="#e8899a"/><circle cx="475" cy="374" r="9" fill="#a8263b"/>
+    <path d="M545 420h70l-10 48h-50z" fill="#7a4a2e"/><path d="M537 422q5-45 43-45t43 45z" fill="#f3d38a"/><circle cx="580" cy="374" r="9" fill="#a8263b"/>
+    <path d="M650 420h70l-10 48h-50z" fill="#7a4a2e"/><path d="M642 422q5-45 43-45t43 45z" fill="#e8899a"/><circle cx="685" cy="374" r="9" fill="#a8263b"/>
+  </g>
+  <!-- counter -->
+  <rect y="475" width="1200" height="40" fill="#7a4a2e"/>
+  <rect y="515" width="1200" height="160" fill="#a96f45"/>
+  <path d="M200 515v160M400 515v160M600 515v160M800 515v160M1000 515v160" stroke="#946039" stroke-width="6"/>
+  <!-- coffee -->
+  <ellipse cx="880" cy="470" rx="105" ry="14" fill="#d9c3a5"/>
+  <path d="M815 370h130v50a65 50 0 0 1-130 0z" fill="#2f6f6a"/>
+  <path d="M945 385c45-5 45 55-8 52" fill="none" stroke="#2f6f6a" stroke-width="14"/>
+  <ellipse cx="880" cy="370" rx="65" ry="10" fill="#5a3320"/>
+  <path d="M852 345c-24-28 22-45 0-78M900 345c-24-28 22-45 0-78" fill="none" stroke="#c9a688" stroke-width="10" stroke-linecap="round"/>
+  <!-- clipboard -->
+  <g transform="translate(-18 0) translate(982 250) scale(.85) translate(-982 -250) rotate(7 990 270)">
+    <rect x="920" y="170" width="125" height="165" rx="12" fill="#2f6f6a"/>
+    <rect x="932" y="188" width="101" height="135" rx="5" fill="#ffffff"/>
+    <rect x="958" y="158" width="48" height="30" rx="8" fill="#e8a56b"/>
+    <path d="M946 218l8 8 15-17M946 253l8 8 15-17M946 288l8 8 15-17" fill="none" stroke="#2f6f6a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M982 220h38M982 255h38M982 290h28" stroke="#c9b8a4" stroke-width="7" stroke-linecap="round"/>
+  </g>
+</svg>

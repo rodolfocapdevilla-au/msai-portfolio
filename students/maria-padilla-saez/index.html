@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -66,6 +66,14 @@
   .chat-form button:hover{background:var(--blue-dark)}
   .chat-form button:disabled{opacity:.6;cursor:wait}
   .chat-note{margin:0;padding:0 10px 10px;font-size:12px;line-height:1.4;color:var(--ink-soft);text-align:center}
+
+  /* En el teléfono: el nombre y la frase principal van antes de la foto, para que se lean sin desplazarse */
+  @media (max-width:860px){
+    .cols{display:flex;flex-direction:column;align-items:stretch;gap:0}
+    .cols > aside, .cols > main{display:contents}
+    .cols main > h1{order:-2}
+    .cols main > .quote{order:-1}
+  }
 </style>
 </head>
 <body>
@@ -73,9 +81,9 @@
 <nav class="nav">
   <!-- EDIT 1 — your name here too -->
   <a class="badge" href="#top">María L. Padilla Sáez</a>
-  <a class="pill" href="#projects">Projects</a>
-  <a class="pill" href="#education">Education &amp; Experience</a>
-  <a class="pill" href="https://rodolfocapdevilla-au.github.io/msai-portfolio/">All students</a>
+  <a class="pill" href="#projects">Proyectos</a>
+  <a class="pill" href="#education">Educación y experiencia</a>
+  <a class="pill" href="https://rodolfocapdevilla-au.github.io/msai-portfolio/">Todos los estudiantes</a>
   <span class="spacer"></span>
   <a class="pill" href="https://atlantisuniversity.edu/" target="_blank" rel="noopener">Atlantis University</a>
 </nav>
@@ -87,15 +95,15 @@
     <aside>
       <!-- ===== EDIT 2 of 5 — replace photo.jpg in this folder with your own ===== -->
       <div class="photo-card">
-        <img src="photo.jpg" alt="Photograph of María L. Padilla Sáez">
+        <img src="photo.jpg" alt="Fotografía de María L. Padilla Sáez">
       </div>
 
       <!-- ===== EDIT 3 of 5 — your four links. Every href must start with https:// ===== -->
-      <a class="rail-link" href="https://www.linkedin.com/in/maria-padilla-saez-9878">LinkedIn profile</a>
-      <a class="rail-link" href="https://github.com/mariapadilla-debug">GitHub profile</a>
-      <a class="rail-link" href="resume.pdf">Résumé</a>
+      <a class="rail-link" href="https://www.linkedin.com/in/mpadilla-padilla-26bb08368/">Perfil de LinkedIn</a>
+      <a class="rail-link" href="https://github.com/mariapadilla-debug">Perfil de GitHub</a>
+      <a class="rail-link" href="resume.pdf">Currículum</a>
       <a class="rail-link" href="https://mariap62.wordpress.com/">Blog</a>
-      <a class="rail-link" href="https://maria-padilla-saez.maria-padilla-saez-cloudflare.workers.dev" target="_blank" rel="noopener">Live website ↗</a>
+      <a class="rail-link" href="https://maria-padilla-saez.maria-padilla-saez-cloudflare.workers.dev" target="_blank" rel="noopener">Sitio en vivo ↗</a>
     </aside>
 
     <!-- ================= MAIN COLUMN ================= -->
@@ -105,24 +113,29 @@
 
       <!-- ===== EDIT 4 of 5 — one or two true sentences. Not a job title. ===== -->
       <p class="quote">
-        Enfermera epidemióloga, con desempeño en vigilancia, prevención y control de enfermedades,
-        contribuyendo a la protección de la salud de la comunidad.
+        Soy enfermera epidemióloga, con años de experiencia en hospitales y en la prevención y el control
+        de enfermedades. En mi tesis encontré que solo 5 de cada 10 estudiantes de la Universidad de Puerto Rico
+        en Cayey hacen actividad física. Si usted está a cargo del control de infecciones en una clínica y su personal
+        no siempre usa el equipo de protección como debe, puedo revisar cómo lo usan y recomendarle mejoras:
+        escríbame desde el <a href="#contact">formulario de Contacto</a>.
       </p>
 
       <!-- ===== EDIT 5 of 5 — four project cards ===== -->
-      <h2 id="projects">Current Projects</h2>
+      <h2 id="projects">Proyectos actuales</h2>
       <div class="cards">
 
         <article class="card">
           <img src="tesis.jpg" alt="Hoja promocional del estudio sobre actividad física y estilos de vida en estudiantes de la UPR en Cayey">
           <h3>Tesis: Association Between Physical Activity, Sedentary Behavior and Lifestyle in University Students in the University of Puerto Rico at Cayey</h3>
           <p>El estudio analizó la relación entre la actividad física, el comportamiento sedentario y los estilos de vida de estudiantes de la Universidad de Puerto Rico en Cayey. Mediante una encuesta, se recopiló información sobre sus hábitos de movimiento, tiempo sentado y prácticas cotidianas. Los datos se examinaron para identificar posibles asociaciones entre estas variables y aportar información sobre la salud y el bienestar estudiantil.</p>
+          <p><strong>Resultados:</strong> Se encontró que 5 de cada 10 estudiantes realizan algún tipo de actividad física, lo cual es menor que lo reportado previamente en la literatura para estudiantes universitarios. Este estudio también encontró que la razón principal para realizar actividad física es por motivos de salud. Aunque los participantes afirmaron ser físicamente activos, el porcentaje de estudiantes que realizan actividad física demostró que no practican un estilo de vida saludable. Para estudios futuros, se deberían implementar medidas dentro del instrumento en la sección de percepción de la salud.</p>
         </article>
 
         <article class="card">
           <img src="blog.jpg" alt="Portada del blog Salud Pública 180: manos protegiendo un escudo con una cruz médica">
-          <h3><a href="https://mariap62.wordpress.com/">Blog: Salud Pública 180</a></h3>
+          <h3><a href="https://mariap62.wordpress.com/2024/01/18/como-prevenir-enfermedades-cronicas-a-traves-de-una-alimentacion-saludable-y-ejercicio-fisico/">Blog: Salud Pública 180</a></h3>
           <p>Un espacio sobre salud pública con un enfoque innovador y transformador. «180» representa un cambio completo para enfrentar los desafíos de salud actuales y futuros: estrategias para prevenir enfermedades, mejorar el acceso a la atención médica, promover estilos de vida saludables y reducir las desigualdades en la salud de las comunidades.</p>
+          <p><strong>Artículo destacado:</strong> <a href="https://mariap62.wordpress.com/2024/01/18/como-prevenir-enfermedades-cronicas-a-traves-de-una-alimentacion-saludable-y-ejercicio-fisico/">«Cómo prevenir enfermedades crónicas a través de una alimentación saludable y ejercicio físico»</a> (18 de enero de 2024). Explica cómo una dieta equilibrada y el ejercicio regular ayudan a prevenir o controlar la diabetes, la hipertensión y las enfermedades cardiovasculares, y repasa sus beneficios: control de peso, menos colesterol, mejor digestión y salud mental, y huesos más fuertes.</p>
         </article>
 
 
@@ -131,18 +144,18 @@
       </div>
 
       <!-- ===== Thursday: fill these in ===== -->
-      <h2 id="education">Education &amp; Experience</h2>
+      <h2 id="education">Educación y experiencia</h2>
       <div class="split">
         <div>
-          <h3>Education</h3>
+          <h3>Educación</h3>
           <ul class="chain">
-            <li>Maestría en Administración de Servicios de la Salud y Enfermería<div class="where">Atlantis University</div></li>
+            <li>Maestría en Administración de Servicios de la Salud y Enfermería<div class="where">Atlantis University · En curso · Graduación esperada: julio de 2027</div></li>
             <li>Maestría en Salud Pública y Epidemiología<div class="where">Escuela de Medicina San Juan Bautista · 2024 · Summa Cum Laude</div></li>
             <li>Bachillerato en Ciencias de Enfermería<div class="where">Universidad Interamericana de Puerto Rico, Barranquitas · 2021</div></li>
           </ul>
         </div>
         <div>
-          <h3>Experience</h3>
+          <h3>Experiencia</h3>
           <ul class="chain">
             <li>Enfermera Generalista<div class="where">Hospital Auxilio Mutuo · 2006–2025</div></li>
             <li>Enfermera Práctica<div class="where">Hospital San Pablo · 1994–1999</div></li>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Natalia Aristizabal — MS in Artificial Intelligence</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+  /* Bacteria swimming in the background (styles for my page only) */
+  /* Pause button sits bottom-left: the class Feedback button uses the bottom-right corner */
+  #bact-bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:-1;pointer-events:none}
+  #bact-bar{position:fixed;left:16px;bottom:16px;z-index:10;display:flex;align-items:center;gap:10px;
+    background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:999px;
+    padding:6px 6px 6px 14px;font-size:13px;color:var(--ink-soft);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+  #bact-bar button{font:inherit;font-weight:600;color:var(--blue);background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:4px 12px;cursor:pointer}
+  #bact-bar button:hover{background:#EEF4FF}
+  .rail-link{background:#fff}  /* keeps my link buttons easy to read when bacteria swim behind them */
+  @media (max-width:600px){#bact-bar span{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="badge" href="#top">Natalia Aristizabal</a>
+  <a class="pill" href="#projects">Projects</a>
+  <a class="pill" href="#education">Education &amp; Experience</a>
+  <a class="pill" href="../../">All students</a>
+  <span class="spacer"></span>
+  <a class="pill" href="https://atlantisuniversity.edu/program/master-of-science-in-artificial-intelligence/" target="_blank" rel="noopener">MS in AI</a>
+</nav>
+
+<div class="wrap" id="top">
+  <div class="cols">
+
+    <!-- ================= LEFT RAIL ================= -->
+    <aside>
+      <!-- ===== EDIT 2 of 5 — replace photo.jpg in this folder with your own ===== -->
+      <div class="photo-card">
+        <img src="photo.jpg" alt="Photograph of Natalia Aristizabal">
+      </div>
+
+      <!-- ===== EDIT 3 of 5 — your four links. Every href must start with https:// ===== -->
+      <a class="rail-link" href="https://www.linkedin.com/in/natalia-aristiz%C3%A1bal-%C3%A1lvarez-063728124/">LinkedIn profile</a>
+      <a class="rail-link" href="https://github.com/natiaristi9">GitHub profile</a>
+      <a class="rail-link" href="resume.pdf">Résumé</a>
+      <a class="rail-link" href="https://issuu.com/pujaveriana/docs/hoy_jav_nov_web/21">Honorable Mention, Cruz San Pedro Claver (2014)</a>
+    </aside>
+
+    <!-- ================= MAIN COLUMN ================= -->
+    <main>
+      <!-- EDIT 1 — and here -->
+      <h1>Natalia Aristizabal</h1>
+
+      <!-- ===== EDIT 4 of 5 — one or two true sentences. Not a job title. ===== -->
+      <p class="quote">
+        I am a Medical Laboratory Scientist, M.S. Experimental Biomedicine. Passionate about learning new knowledge in the fields of Neuroscience, Technology, and Biohacking.
+      </p>
+
+      <!-- ===== EDIT 5 of 5 — four project cards ===== -->
+      <h2 id="projects">Current Projects</h2>
+      <div class="cards">
+
+        <article class="card">
+          <img src="maldi-tof-blood-culture-bacteria.svg" alt="Illustration of a MALDI-TOF mass spectrometer identifying bacteria from a blood culture bottle">
+          <h3>MALDI-TOF MS for faster diagnosis of bloodstream infections</h3>
+          <p>Undergraduate thesis (Pontificia Universidad Javeriana, 2014), co-authored with Gleidy Trujillo Carreño at Hospital Universitario San Ignacio. We implemented MALDI-TOF MS to identify microorganisms directly from 43 positive blood cultures and compared it with the hospital's conventional methods. 39 of the 43 samples were identified, in under 90 minutes. <a href="https://core.ac.uk/download/71414347.pdf">Read the thesis →</a></p>
+        </article>
+
+        <article class="card">
+          <img src="honorable-mention-service-medal.svg" alt="Illustration of a medal with a cross emblem, a community home, hearts and building blocks">
+          <h3>Cruz San Pedro Claver: Honorable Mention (2014)</h3>
+          <p>Pontificia Universidad Javeriana awards the Cruz San Pedro Claver to students who stand out for their human qualities and service to others. In 2014 I received an Honorable Mention, featured in the university magazine <em>Hoy en la Javeriana</em>. During my studies I also volunteered with community mothers in the Pardo Rubio neighborhood of Bogotá and with Misión País Colombia. <a href="https://issuu.com/pujaveriana/docs/hoy_jav_nov_web/21">Read the article →</a></p>
+        </article>
+
+        <article class="card">
+          <img src="smear-microscopy-quality-control.svg" alt="Illustration of a microscope, slides, red acid-fast bacilli on a blue field, and a quality-control checklist">
+          <h3>Quality control of tuberculosis and leprosy smear microscopy</h3>
+          <p>As the Mycobacteria bacteriologist at the Quindío Public Health Laboratory (2017–2019), I carried out quality control and supervision of smear microscopy for <em>Mycobacterium tuberculosis</em> and <em>Mycobacterium leprae</em> for the department's laboratory network, supporting reliable diagnosis in Public Health.</p>
+        </article>
+
+        <article class="card">
+          <img src="lung-cancer-genes-oral-presentation.svg" alt="Illustration of a research presentation: lungs with a tumor on a screen, a lectern with a microphone, and a DNA helix with three highlighted genes">
+          <h3>NKX-2, ROR1 and RUNX2 in lung cancer progression</h3>
+          <p>Oral presentation at the 3rd National Meeting of Research Seedbeds – Health Sciences (Tercer Encuentro Nacional de Semilleros de Investigación – Ciencias de la Salud), in Bogotá, August 4–6, 2015, certified by the Fundación Universitaria de Ciencias de la Salud (FUCS). As a member of the Lung Cancer Research Seedbed (Faculty of Medicine, Pontificia Universidad Javeriana, Bogotá, Colombia), I presented with five co-authors how the genes NKX-2, ROR1 and RUNX2 contribute to tumor progression in lung cancer. <a href="certificate-oral-presentation-fucs-2015.pdf">View certificate →</a></p>
+        </article>
+
+      </div>
+
+      <!-- ===== Thursday: fill these in ===== -->
+      <h2 id="education">Education &amp; Experience</h2>
+      <div class="split">
+        <div>
+          <h3>Education</h3>
+          <ul class="chain">
+            <li>MS in Artificial Intelligence<div class="where">Atlantis University, Miami · in progress</div></li>
+            <li>M.Sc. in Experimental Biomedicine<div class="where">University of Castilla-La Mancha, Spain · 2022</div></li>
+            <li>Bachelor's Degree in Bacteriology<div class="where">Pontificia Universidad Javeriana, Bogotá · 2015</div></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Experience</h3>
+          <ul class="chain">
+            <li>Product Specialist<div class="where">Byo Colombia S.A.S. · 2022–2023</div></li>
+            <li>Research Intern, Immunology Laboratory<div class="where">University of Castilla-La Mancha, Spain · 2021–2022</div></li>
+            <li>Clinical Bacteriologist<div class="where">Colombian National Police Health Service, Quindío · 2020–2021</div></li>
+            <li>Bacteriologist, Mycobacteria and Microbiology<div class="where">Quindío Public Health Laboratory · 2017–2019, 2021</div></li>
+            <li>Bacteriologist, Mandatory Social Service<div class="where">Colombian National Army · 2015–2016</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <footer>
+        MS in Artificial Intelligence · Atlantis University
+      </footer>
+    </main>
+
+  </div>
+</div>
+
+<script src="bacteria.js" defer></script>
+<script src="../../assets/feedback.js" defer></script>
+</body>
+</html>

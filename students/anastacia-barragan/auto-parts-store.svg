@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="800" height="450" role="img" aria-label="Store shelves with tires, gears, boxes and car parts">
+  <rect width="1200" height="675" fill="#14324a"/>
+  <rect y="590" width="1200" height="85" fill="#0d2234"/>
+  <!-- shelf frame -->
+  <g fill="#5f7f96">
+    <rect x="180" y="70" width="18" height="540"/><rect x="1002" y="70" width="18" height="540"/>
+    <rect x="165" y="230" width="870" height="20" rx="4"/><rect x="165" y="410" width="870" height="20" rx="4"/><rect x="165" y="580" width="870" height="20" rx="4"/>
+  </g>
+  <!-- top shelf: boxes and oil bottles -->
+  <g fill="#e08a3c"><rect x="225" y="130" width="120" height="100" rx="6"/><rect x="355" y="155" width="95" height="75" rx="6"/></g>
+  <g fill="#f6c98f"><rect x="270" y="130" width="30" height="40"/><rect x="390" y="155" width="26" height="30"/></g>
+  <g fill="#3fb5a3">
+    <path d="M520 130h30v22h24a10 10 0 0 1 10 10v68h-76v-82a18 18 0 0 1 12-18z"/>
+    <path d="M620 130h30v22h24a10 10 0 0 1 10 10v68h-76v-82a18 18 0 0 1 12-18z"/>
+  </g>
+  <g fill="#e9f6f3"><rect x="524" y="180" width="46" height="28" rx="4"/><rect x="624" y="180" width="46" height="28" rx="4"/></g>
+  <!-- battery -->
+  <rect x="770" y="140" width="180" height="90" rx="10" fill="#c8d6e0"/>
+  <rect x="795" y="122" width="34" height="20" fill="#d9534f"/><rect x="890" y="122" width="34" height="20" fill="#222f3a"/>
+  <path d="M802 185h30M817 170v30M885 185h30" stroke="#14324a" stroke-width="8" stroke-linecap="round"/>
+  <!-- middle shelf: tires -->
+  <g fill="#1b1f24" stroke="#4a525b" stroke-width="6"><circle cx="300" cy="336" r="72"/><circle cx="450" cy="336" r="72"/></g>
+  <g fill="#b9c6d0"><circle cx="300" cy="336" r="32"/><circle cx="450" cy="336" r="32"/></g>
+  <g fill="#14324a"><circle cx="300" cy="336" r="9"/><circle cx="450" cy="336" r="9"/></g>
+  <!-- gears -->
+  <g fill="none" stroke="#f2b84b">
+    <circle cx="640" cy="342" r="52" stroke-width="22" stroke-dasharray="20 20.84"/>
+    <circle cx="640" cy="342" r="31" stroke-width="22"/>
+  </g>
+  <g fill="none" stroke="#c8d6e0">
+    <circle cx="745" cy="372" r="30" stroke-width="16" stroke-dasharray="11.8 11.76"/>
+    <circle cx="745" cy="372" r="17" stroke-width="13"/>
+  </g>
+  <!-- spark plugs -->
+  <g>
+    <path d="M848 270h20v42h-20zM913 270h20v42h-20z" fill="#c8d6e0"/>
+    <path d="M840 312h36v44h-36zM905 312h36v44h-36z" fill="#ffffff"/>
+    <path d="M833 356h50v34h-50zM898 356h50v34h-50z" fill="#8798a6"/>
+    <path d="M846 390h24v20h-24zM911 390h24v20h-24z" fill="#c8d6e0"/>
+  </g>
+  <!-- bottom shelf: inventory boxes and checklist -->
+  <g fill="#3fb5a3"><rect x="230" y="490" width="150" height="90" rx="6"/></g>
+  <g fill="#e08a3c"><rect x="395" y="470" width="120" height="110" rx="6"/><rect x="530" y="505" width="130" height="75" rx="6"/></g>
+  <g fill="#ffffff" opacity=".8"><rect x="280" y="515" width="50" height="22" rx="3"/><rect x="430" y="500" width="50" height="22" rx="3"/><rect x="570" y="525" width="50" height="22" rx="3"/></g>
+  <rect x="760" y="455" width="190" height="125" rx="10" fill="#ffffff"/>
+  <path d="M782 485l9 9 16-19M782 522l9 9 16-19M782 559l9 9 16-19" fill="none" stroke="#3fb5a3" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M828 489h100M828 526h80M828 563h92" stroke="#9fb2c0" stroke-width="9" stroke-linecap="round"/>
+</svg>
